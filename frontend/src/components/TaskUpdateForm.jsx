@@ -30,7 +30,7 @@ const UpdateTaskForm = () => {
       );
 
       if (response.status === 200) {
-        alert("Task updated successfully!");
+        toast.success("Task updated successfully!");
         navigate(`/fetch-tasks/${project}`);
       }
     } catch (error) {

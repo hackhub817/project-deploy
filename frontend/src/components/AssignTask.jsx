@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 const AssignTask = () => {
@@ -40,14 +41,14 @@ const AssignTask = () => {
               withCredentials: true,
             }
           );
-          alert("Task assigned successfully");
+          toast.success("Task assigned successfully");
           navigate(`/fetch-tasks/${project}`);
         }
       } catch (error) {
         console.error("Error assigning task:", error);
       }
     } else {
-      alert("Please select a user to assign the task");
+      toast.error("Please select a user to assign the task");
     }
   };
 
