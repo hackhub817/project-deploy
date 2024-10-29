@@ -16,7 +16,7 @@ const SignupForm = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/register`,
+        `https://project-deploy-api-five.vercel.app/api/auth/register`,
         {
           username,
           email,
