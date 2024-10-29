@@ -42,10 +42,10 @@ exports.loginUser = async (req, res) => {
         expiresIn: "12h",
       }
     );
-    res.cookie("jwt", token, {
+   res.cookie("jwt", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "none",
+      secure: true,
+      sameSite: "lax",
       path: "/",
     });
     res.json({ token, user: user });
