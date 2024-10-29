@@ -19,6 +19,9 @@ const AssignTask = () => {
         `https://project-deploy-api-five.vercel.app/api/auth/users`,
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       setUsers(data);
@@ -39,6 +42,9 @@ const AssignTask = () => {
             },
             {
               withCredentials: true,
+              headers: {
+                "Content-Type": "application/json",
+              },
             }
           );
           toast.success("Task assigned successfully");

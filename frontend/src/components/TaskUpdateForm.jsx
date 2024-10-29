@@ -28,6 +28,9 @@ const UpdateTaskForm = () => {
         },
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
 

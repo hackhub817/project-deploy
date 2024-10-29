@@ -23,6 +23,9 @@ const CreateProject = () => {
         },
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       setTitle("");

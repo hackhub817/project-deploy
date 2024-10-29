@@ -28,14 +28,24 @@ const FetchTasks = () => {
     try {
       const projectResponse = await axios.get(
         `https://project-deploy-api-five.vercel.app/api/project/${id}`,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       setProject(projectResponse.data);
       console.log(projectResponse.data);
 
       const tasksResponse = await axios.get(
         `https://project-deploy-api-five.vercel.app/api/task/filtertasks/?projectId=${id}&status=${statusFilter}`,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       setTasks(tasksResponse.data);
       console.log(tasksResponse.data);
@@ -52,7 +62,12 @@ const FetchTasks = () => {
     try {
       const response = await axios.delete(
         `https://project-deploy-api-five.vercel.app/api/task/${taskId}`,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       toast.success(response.data.message);
       fetchProjectDetails();

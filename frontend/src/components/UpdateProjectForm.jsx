@@ -17,6 +17,9 @@ const UpdateProjectForm = () => {
           `https://project-deploy-api-five.vercel.app/api/project/${id}`,
           {
             withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
         setTitle(response.data.title);
@@ -36,7 +39,12 @@ const UpdateProjectForm = () => {
       const response = await axios.put(
         `https://project-deploy-api-five.vercel.app/api/project/${id}`,
         { title, description },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       toast.success("Project updated successfully!");
       navigate("/userDashboard");

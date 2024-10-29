@@ -28,6 +28,9 @@ export const AuthProvider = ({ children }) => {
           "https://project-deploy-api-five.vercel.app/api/auth/check-auth",
           {
             withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
 

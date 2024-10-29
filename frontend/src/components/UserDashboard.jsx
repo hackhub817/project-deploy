@@ -15,6 +15,9 @@ const UserDashboard = () => {
           "https://project-deploy-api-five.vercel.app/api/project/getAllprojects",
           {
             withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
         setProjects(response.data);
@@ -29,7 +32,12 @@ const UserDashboard = () => {
     try {
       const response = await axios.delete(
         `https://project-deploy-api-five.vercel.app/api/project/delete/${id}`,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       toast.success(response.data.message || "Project deleted successfully!");
 

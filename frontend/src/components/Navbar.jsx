@@ -13,6 +13,9 @@ const Navbar = () => {
         `https://project-deploy-api-five.vercel.app/api/auth/logout`,
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       logout(navigate);

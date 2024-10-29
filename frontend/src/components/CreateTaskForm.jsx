@@ -28,7 +28,12 @@ const CreateTaskForm = () => {
           dueDate,
           status,
         },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       toast.success("Task created successfully!");
