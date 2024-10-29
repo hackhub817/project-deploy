@@ -43,8 +43,8 @@ exports.loginUser = async (req, res) => {
       }
     );
     res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: true,
+      httpOnly: false,
+      secure: false,
       sameSite: "none",
       path: "/",
     });
