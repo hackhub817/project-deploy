@@ -9,9 +9,12 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`http:///api/auth/logout`, {
-        withCredentials: true,
-      });
+      await axios.get(
+        `https://project-deploy-api-five.vercel.app/api/auth/logout`,
+        {
+          withCredentials: true,
+        }
+      );
       logout(navigate);
     } catch (error) {
       console.error(
